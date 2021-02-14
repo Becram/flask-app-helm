@@ -1,0 +1,27 @@
+{{- if  .Values.hpa }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ include "deployment.name" . }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ include "deployment.name" . }}
+  minReplicas: {{ .Values.hpa.minReplicas }}
+  maxReplicas: {{ .Values.hpa.maxReplicas }}
+  {{- if .Values.hpa.cpuPercent }}
+  targetCPUUtilizationPercentage: {{ .Values.hpa.cpuPercent }}
+  {{- end }}
+  {{- if .Values.hpa.metricValue }}
+  metrics:
+  - type: {{ .Values.hpa.type | default "Pods" | title }}
+    {{ .Values.hpa.type | default "pods" | lower }}:
+      metricName: {{ .Values.hpa.metricName | quote }}
+      targetAverageValue: {{ .Values.hpa.metricValue }}
+    {{- if .Values.hpa.metricSelector }}
+      metricSelector:
+      {{ toYaml .Values.hpa.metricSelector | indent 2 }}
+    {{- end }}
+  {{- end }}
+{{- end }}
