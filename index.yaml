@@ -1,3 +1,20 @@
 apiVersion: v1
-entries: {}
-generated: "2021-02-14T16:54:34.488917876+07:00"
+entries:
+  flask-app:
+  - apiVersion: v1
+    appVersion: 0.0.1
+    created: "2021-03-16T17:29:43.967958294+07:00"
+    description: flask Helm chart for Kubernetes
+    digest: dab92b3d144abb74acd4f3e0e830e08eb0aa86e4fe57249efbd406483de751c8
+    engine: gotpl
+    home: https://gitlab.com/sertiscorp/devops/helm-charts/flask-app
+    maintainers:
+    - email: devops@sertiscorp.com
+      name: devops@sertiscorp.com
+    name: flask-app
+    sources:
+    - https://gitlab.com/sertiscorp/devops/helm-charts/flask-app
+    urls:
+    - http://bikramdhoju.com.np/flask-app-0.0.1.tgz
+    version: 0.0.1
+generated: "2021-03-16T17:29:43.96717572+07:00"
