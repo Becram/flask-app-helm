@@ -4,9 +4,3 @@ appVersion: 0.0.1
 name: flask-app
 engine: gotpl
 description: flask Helm chart for Kubernetes
-home: https://gitlab.com/sertiscorp/devops/helm-charts/flask-app
-maintainers:
-- email: devops@sertiscorp.com
-  name: devops@sertiscorp.com
-sources:
-- https://gitlab.com/sertiscorp/devops/helm-charts/flask-app
