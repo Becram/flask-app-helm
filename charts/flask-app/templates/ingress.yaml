@@ -2,7 +2,7 @@
 {{- if .Values.ingress.enabled -}}
 {{- $fullName := include "deployment.name" . -}}
 {{- $servicePort := .Values.exposedPort -}}
-apiVersion: networking.k8s.io/v1
+apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: {{ include "deployment.name" . }}
